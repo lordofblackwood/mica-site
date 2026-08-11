@@ -1,0 +1,32 @@
+# macOS and editor noise
+.DS_Store
+*.swp
+*.swo
+*~
+.#*
+.idea/
+.vscode/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Racket / Pollen generated caches
+compiled/
+*.zo
+*.dep
+
+# Generated site output
+/public/
+_site/
+
+# Local, recoverable pre-rebuild source preserved during the 2026-08 migration
+/src-legacy-before-rebuild-20260811/
+
+# Temporary files and logs
+*.tmp
+*.log
+
+# Private review inbox. These recovered drafts never enter public Git history.
+/content-inbox/private/

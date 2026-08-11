@@ -1,0 +1,67 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Daily refresh so new public repositories and Pages sites appear without
+    # an edit to this repository. Times are UTC.
+    - cron: "37 9 * * *"
+  repository_dispatch:
+    types: [portfolio-refresh]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install Racket
+        uses: Bogdanp/setup-racket@v1.15
+        with:
+          architecture: x64
+          distribution: full
+          version: "8.14"
+
+      - name: Install Pollen
+        run: raco pkg install --auto pollen
+
+      - name: Run tests
+        run: raco test tests/site-core-test.rkt tests/github-sync-test.rkt
+
+      - name: Refresh projects and build
+        env:
+          GITHUB_SYNC_MODE: refresh
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SITE_ORIGIN: https://lordofblackwood.github.io
+          SITE_BASE_PATH: /mica-site
+        run: racket build.rkt
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

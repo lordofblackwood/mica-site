@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "projects": {
+    "workout-tool": {
+      "title": "Workout Tool"
+    },
+    "star-skylight": {
+      "title": "Star Skylight"
+    },
+    "AdventOfCode": {
+      "title": "Advent of Code"
+    },
+    "password-tool": {
+      "title": "Password Tool"
+    },
+    "USAPL-Collegiate-Nationals-Scouting-Report-Generator": {
+      "title": "USAPL Scouting Report Generator"
+    },
+    "racket-nat-traversal": {
+      "title": "Racket NAT Traversal"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">Poetry Reset</title>
+  <desc id="description">A field-note page with lines of poetry and a circular reset mark.</desc>
+  <defs>
+    <pattern id="notebook-dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.5" fill="#8bb8d0" opacity="0.18"/>
+    </pattern>
+  </defs>
+
+  <rect width="512" height="512" rx="104" fill="#121416"/>
+  <rect width="512" height="512" rx="104" fill="url(#notebook-dots)"/>
+
+  <rect x="92" y="68" width="328" height="376" rx="46" fill="#202427" stroke="#3d4143" stroke-width="8"/>
+  <path d="M151 104v304" fill="none" stroke="#e08a81" stroke-width="7" opacity="0.72"/>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M190 151h151" stroke="#f0ebe1" stroke-width="14"/>
+    <path d="M190 201h111" stroke="#8bb8d0" stroke-width="12"/>
+    <path d="M190 251h145" stroke="#f0ebe1" stroke-width="14"/>
+    <path d="M190 301h78" stroke="#8bb8d0" stroke-width="12"/>
+  </g>
+
+  <path d="M337 302a69 69 0 1 1-20 101" fill="none" stroke="#e08a81" stroke-width="18" stroke-linecap="round"/>
+  <path d="m301 393 17 20 24-15" fill="none" stroke="#e08a81" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="112" cy="118" r="10" fill="#8bb8d0"/>
+</svg>
