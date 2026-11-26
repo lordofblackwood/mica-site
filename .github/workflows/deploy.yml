@@ -8,7 +8,6 @@ on:
     # Daily refresh so new public repositories and Pages sites appear without
     # an edit to this repository. Times are UTC.
     - cron: "37 9 * * *"
-    - cron: "3 14 26 11 *" # MicaOS release build
   repository_dispatch:
     types: [portfolio-refresh]
 
