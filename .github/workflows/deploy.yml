@@ -7,7 +7,7 @@ on:
   schedule:
     # Daily refresh so new public repositories and Pages sites appear without
     # an edit to this repository. Times are UTC.
-    - cron: "37 9 * * 0-6"
+    - cron: "37 9 * * *"
   repository_dispatch:
     types: [portfolio-refresh]
 
