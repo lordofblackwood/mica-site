@@ -74,6 +74,9 @@
       h2 { margin-inline: .4rem; }
       .app { padding-inline: .4rem; }
     }
+    @media (hover: none), (forced-colors: active) {
+      .app strong { text-decoration-line: underline; text-underline-offset: .15em; }
+    }
     @media (forced-colors: active) {
       .mark { border: 1px solid CanvasText; }
       .app:focus-visible { outline-color: Highlight; }
