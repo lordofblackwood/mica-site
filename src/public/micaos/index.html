@@ -74,6 +74,10 @@
       h2 { margin-inline: .4rem; }
       .app { padding-inline: .4rem; }
     }
+    li { container-type: inline-size; }
+    @container (max-width: 14rem) {
+      .app { flex-direction: column; align-items: flex-start; gap: .5rem; }
+    }
     @media (hover: none), (forced-colors: active) {
       .app strong { text-decoration-line: underline; text-underline-offset: .15em; }
     }
